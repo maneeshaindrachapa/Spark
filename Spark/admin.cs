@@ -456,6 +456,7 @@ namespace Spark
 
                 int value = Convert.ToInt32(quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[6].Value);
                 int paidValue = Convert.ToInt32(quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[7].Value) + Convert.ToInt32(paymentTB.Text);
+                
                 int balance = value - paidValue;
                 string query = "UPDATE supplierDetails set paidValue='"+paidValue+"',Balance='"+balance+"' where id='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[0].Value.ToString() + "'";
                 SqlCommand data = new SqlCommand(query, sqlConn);
@@ -468,6 +469,19 @@ namespace Spark
             {
                 MessageBox.Show(error.ToString());
             }
+        }
+
+        private void editUserLBL_Click(object sender, EventArgs e)
+        {
+            edituserLBL1.Visible = !(edituserLBL1.Visible);
+        }
+
+        private void edituserLBL1_Click(object sender, EventArgs e)
+        {
+            EditUserForm edituserform = new EditUserForm();
+            edituserform.setUsername(usernamelbl.Text);
+            edituserform.userdataload(usernamelbl.Text);
+            edituserform.ShowDialog();
         }
     }
 }

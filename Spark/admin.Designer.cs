@@ -80,10 +80,6 @@
             this.discountChangedlbl = new System.Windows.Forms.Label();
             this.changeDiscountbtn = new System.Windows.Forms.Label();
             this.quotationDG = new System.Windows.Forms.DataGridView();
-            this.acceptQuotation = new System.Windows.Forms.Label();
-            this.removequotationlbl = new System.Windows.Forms.Label();
-            this.paymentTB = new System.Windows.Forms.TextBox();
-            this.payementBTN = new System.Windows.Forms.Label();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +90,12 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acceptQuotation = new System.Windows.Forms.Label();
+            this.removequotationlbl = new System.Windows.Forms.Label();
+            this.paymentTB = new System.Windows.Forms.TextBox();
+            this.payementBTN = new System.Windows.Forms.Label();
+            this.edituserLBL1 = new System.Windows.Forms.Label();
+            this.editUserLBL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.quotationDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -694,6 +696,56 @@
             this.quotationDG.Size = new System.Drawing.Size(630, 254);
             this.quotationDG.TabIndex = 126;
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "QID";
+            this.Column9.Name = "Column9";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Supplier ";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Brandname";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Model Name";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Part";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Quantity";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Price";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Paid Value";
+            this.Column7.Name = "Column7";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Balance";
+            this.Column10.Name = "Column10";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Data";
+            this.Column8.Name = "Column8";
+            // 
             // acceptQuotation
             // 
             this.acceptQuotation.AutoSize = true;
@@ -747,55 +799,33 @@
             this.payementBTN.TabIndex = 130;
             this.payementBTN.Click += new System.EventHandler(this.payementBTN_Click);
             // 
-            // Column9
+            // edituserLBL1
             // 
-            this.Column9.HeaderText = "QID";
-            this.Column9.Name = "Column9";
+            this.edituserLBL1.AutoSize = true;
+            this.edituserLBL1.BackColor = System.Drawing.Color.Gray;
+            this.edituserLBL1.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edituserLBL1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.edituserLBL1.Location = new System.Drawing.Point(859, 70);
+            this.edituserLBL1.Margin = new System.Windows.Forms.Padding(0);
+            this.edituserLBL1.Name = "edituserLBL1";
+            this.edituserLBL1.Padding = new System.Windows.Forms.Padding(3);
+            this.edituserLBL1.Size = new System.Drawing.Size(99, 30);
+            this.edituserLBL1.TabIndex = 132;
+            this.edituserLBL1.Text = "Edit User";
+            this.edituserLBL1.Visible = false;
+            this.edituserLBL1.Click += new System.EventHandler(this.edituserLBL1_Click);
             // 
-            // Column1
+            // editUserLBL
             // 
-            this.Column1.HeaderText = "Supplier ";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Brandname";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Model Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Part";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Quantity";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Price";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Paid Value";
-            this.Column7.Name = "Column7";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Balance";
-            this.Column10.Name = "Column10";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Data";
-            this.Column8.Name = "Column8";
+            this.editUserLBL.AutoSize = true;
+            this.editUserLBL.BackColor = System.Drawing.Color.Transparent;
+            this.editUserLBL.Image = ((System.Drawing.Image)(resources.GetObject("editUserLBL.Image")));
+            this.editUserLBL.Location = new System.Drawing.Point(961, 70);
+            this.editUserLBL.MinimumSize = new System.Drawing.Size(30, 30);
+            this.editUserLBL.Name = "editUserLBL";
+            this.editUserLBL.Size = new System.Drawing.Size(30, 30);
+            this.editUserLBL.TabIndex = 131;
+            this.editUserLBL.Click += new System.EventHandler(this.editUserLBL_Click);
             // 
             // admin
             // 
@@ -803,6 +833,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.edituserLBL1);
+            this.Controls.Add(this.editUserLBL);
             this.Controls.Add(this.payementBTN);
             this.Controls.Add(this.paymentTB);
             this.Controls.Add(this.removequotationlbl);
@@ -936,5 +968,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label edituserLBL1;
+        private System.Windows.Forms.Label editUserLBL;
     }
 }
