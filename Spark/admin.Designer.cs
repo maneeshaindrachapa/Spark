@@ -74,6 +74,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.modelchangebrandnamecmb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pricechangedNotification = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // changePricelbl
@@ -83,7 +84,7 @@
             this.changePricelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.changePricelbl.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePricelbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.changePricelbl.Location = new System.Drawing.Point(20, 560);
+            this.changePricelbl.Location = new System.Drawing.Point(33, 556);
             this.changePricelbl.Margin = new System.Windows.Forms.Padding(0);
             this.changePricelbl.Name = "changePricelbl";
             this.changePricelbl.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +92,7 @@
             this.changePricelbl.TabIndex = 106;
             this.changePricelbl.Text = "Change Price";
             this.changePricelbl.Visible = false;
+            this.changePricelbl.Click += new System.EventHandler(this.changePricelbl_Click);
             // 
             // label2
             // 
@@ -588,12 +590,26 @@
             this.label6.Size = new System.Drawing.Size(655, 4);
             this.label6.TabIndex = 120;
             // 
+            // pricechangedNotification
+            // 
+            this.pricechangedNotification.AutoSize = true;
+            this.pricechangedNotification.BackColor = System.Drawing.Color.Transparent;
+            this.pricechangedNotification.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pricechangedNotification.ForeColor = System.Drawing.Color.Black;
+            this.pricechangedNotification.Location = new System.Drawing.Point(185, 562);
+            this.pricechangedNotification.Name = "pricechangedNotification";
+            this.pricechangedNotification.Size = new System.Drawing.Size(109, 18);
+            this.pricechangedNotification.TabIndex = 121;
+            this.pricechangedNotification.Text = "Price Changed";
+            this.pricechangedNotification.Visible = false;
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.pricechangedNotification);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.modelchangebrandnamecmb);
             this.Controls.Add(this.addpartValid);
@@ -696,5 +712,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox modelchangebrandnamecmb;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label pricechangedNotification;
     }
 }

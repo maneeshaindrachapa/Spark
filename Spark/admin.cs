@@ -107,6 +107,7 @@ namespace Spark
         {
             modelnameCB.Items.Clear();
             modelnameCB.ResetText();
+            pricechangedNotification.Visible = false;
             try
             {
                 //reading data from server and add them to combobox modelname
@@ -158,6 +159,7 @@ namespace Spark
 
                         searchResult5.Text = "Stock Size";
                         stocktxt.Text = row["stock"].ToString();
+                        changePricelbl.Visible = true;
                     }
                 }
                 else
@@ -173,6 +175,7 @@ namespace Spark
                     searchResult5.Text = "";
                     priceTB.Text = "";
                     priceTB.Visible = false;
+                    changePricelbl.Visible = false;
                 }
 
             }
@@ -333,6 +336,24 @@ namespace Spark
             else
             {
                 MessageBox.Show("This Car Model is Already Added");
+            }
+        }
+
+        //change price of a perticular part
+        private void changePricelbl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                sqlConn.Open();
+                string query = "UPDATE carParts set price='" + priceTB.Text.ToString() + "' where carBrand='" + brandnametxt.Text.ToString() + "'and carModel='" + modelnametxt.Text.ToString() + "' and carPartName='" + parttypetxt.Text.ToString() + "'";
+                SqlCommand data = new SqlCommand(query, sqlConn);
+                data.ExecuteNonQuery();
+                pricechangedNotification.Visible = true;
+            }
+            catch(SqlException error)
+            {
+                MessageBox.Show(error.ToString());
             }
         }
     }
