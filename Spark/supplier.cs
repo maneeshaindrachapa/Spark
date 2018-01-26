@@ -90,7 +90,7 @@ namespace Spark
 
         private void addItemLbl_Click(object sender, EventArgs e)
         {
-                       SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
             sqlConn.Open();
 
             //starting transaction
@@ -136,7 +136,7 @@ namespace Spark
                 SqlCommand data5 = new SqlCommand(query5, sqlConn);
                 data5.ExecuteNonQuery();*/
 
-                string query4 = "INSERT INTO supplierDetails(username,brandname,modelname,partname,quantity,price) values('" + username.Text + "','" + brandnameCB.GetItemText(brandnameCB.SelectedItem.ToString()) + "','" + modelnameCB.GetItemText(modelnameCB.SelectedItem.ToString()) + "','" + parttypeCB.GetItemText(parttypeCB.SelectedItem.ToString()) + "','" + quantityNUD.Value.ToString() + "','" + priceNUD.Value.ToString() + "')";
+                string query4 = "INSERT INTO supplierDetails(username,brandname,modelname,partname,quantity,price,date) values('" + username.Text + "','" + brandnameCB.GetItemText(brandnameCB.SelectedItem.ToString()) + "','" + modelnameCB.GetItemText(modelnameCB.SelectedItem.ToString()) + "','" + parttypeCB.GetItemText(parttypeCB.SelectedItem.ToString()) + "','" + quantityNUD.Value.ToString() + "','" + priceNUD.Value.ToString() + "','" + date.ToShortDateString() +"')";
                 SqlCommand data4 = new SqlCommand(query4, sqlConn);
                 data4.ExecuteNonQuery();
             }
@@ -171,7 +171,7 @@ namespace Spark
             try
             {
                 //reading data from server and add them to combobox modelname
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
                 string query = "SELECT carModel FROM carBrands left join carParts on carBrands.carBrand=carParts.carBrand where carParts.carBrand='" + brandnameCB.GetItemText(brandnameCB.SelectedItem) + "'group by carModel";
                 SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
@@ -190,7 +190,7 @@ namespace Spark
         }
         public void loadGrid()
         {
-                       SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
             sqlConn.Open();
 
             string query = "SELECT * from supplierDetails where username='" + username.Text + "'";
@@ -261,6 +261,7 @@ namespace Spark
 
         private void loadDatalbl_Click(object sender, EventArgs e)
         {
+            this.transactionDG.Rows.Clear();
             loadGrid();
         }
 

@@ -20,13 +20,15 @@ namespace Spark
             loadBrandnameCB();
             loadparttypeCB();
         }
+        bool addBrandNameValidate = false;
+        bool addpartValidate = false;
         //select comboboxes brandname,car model, part types
         private void loadBrandnameCB()
         {
             try
             {
                 //reading data from server and add them to combobox brandname
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
                 string query = "SELECT carBrand FROM carBrands";
                 SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
@@ -126,7 +128,7 @@ namespace Spark
             try
             {
                 //reading data from server and add them to combobox brandname
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
                 string query = "SELECT * FROM carParts where carBrand='" + brandnameCB.GetItemText(brandnameCB.SelectedItem) + "'and carModel='" + modelnameCB.GetItemText(modelnameCB.SelectedItem) + "'and carPartName='" + parttypeCB.GetItemText(parttypeCB.SelectedItem) + "'";
                 SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
@@ -136,7 +138,6 @@ namespace Spark
                 {
                     foreach (DataRow row in dtbl.Rows)
                     {
-
                         searchResult1.Text = "Car Brand";
                         brandnametxt.Text = row["carBrand"].ToString();
 
@@ -152,7 +153,6 @@ namespace Spark
 
                         searchResult5.Text = "Stock Size";
                         stocktxt.Text = row["stock"].ToString();
-
                     }
                 }
                 else
@@ -174,6 +174,70 @@ namespace Spark
             catch (SqlException error)
             {
                 MessageBox.Show(error.Message);
+            }
+        }
+
+        //add a brandname
+        private void brandnameaddTB_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            sqlConn.Open();
+            string query = "SELECT * FROM carBrands where carBrand='" + brandnameaddTB.Text + "'";
+            SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+            DataTable dtbl = new DataTable();
+            data.Fill(dtbl);
+            if (dtbl.Rows.Count != 0)
+            {
+                validBrandname.Text = "Invaild";
+                validBrandname.ForeColor = System.Drawing.Color.Red;
+                addBrandNameValidate = false;
+            }
+            else
+            {
+                addBrandNameValidate = true;
+                validBrandname.Text = "Valid";
+                validBrandname.ForeColor = System.Drawing.Color.Green;
+            }
+        }
+        //add new brandname to the database
+        private void submitBrandname_Click(object sender, EventArgs e)
+        {
+            if (addBrandNameValidate)
+            {
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                sqlConn.Open();
+                string query = "INSERT INTO carBrands(carBrand) values('" + brandnameaddTB.ToString() + "')";
+                SqlCommand data = new SqlCommand(query, sqlConn);
+                data.ExecuteNonQuery();
+                MessageBox.Show("Car Brand Added");
+                addBrandNameValidate = false;
+            }
+            else
+            {
+                MessageBox.Show("This Brandname Already Added");
+            }
+        }
+
+        //add part validate 
+        private void addpartTB_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            sqlConn.Open();
+            string query = "SELECT * FROM parts where partName='" + addpartTB.Text + "'";
+            SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+            DataTable dtbl = new DataTable();
+            data.Fill(dtbl);
+            if (dtbl.Rows.Count != 0)
+            {
+                addpartValid.Text = "Invaild";
+                addpartValid.ForeColor = System.Drawing.Color.Red;
+                addpartValidate = false;
+            }
+            else
+            {
+                addpartValidate = true;
+                addpartValid.Text = "Valid";
+                addpartValid.ForeColor = System.Drawing.Color.Green;
             }
         }
     }
