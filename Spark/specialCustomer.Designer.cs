@@ -87,7 +87,7 @@
             this.col3,
             this.col4,
             this.col5});
-            this.dataGrid.Location = new System.Drawing.Point(324, 135);
+            this.dataGrid.Location = new System.Drawing.Point(421, 122);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGrid.RowTemplate.Height = 24;
@@ -218,7 +218,7 @@
             this.checkout1.BackColor = System.Drawing.Color.Transparent;
             this.checkout1.Font = new System.Drawing.Font("Raleway Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkout1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.checkout1.Location = new System.Drawing.Point(725, 468);
+            this.checkout1.Location = new System.Drawing.Point(822, 455);
             this.checkout1.Name = "checkout1";
             this.checkout1.Size = new System.Drawing.Size(140, 22);
             this.checkout1.TabIndex = 148;
@@ -259,7 +259,7 @@
             this.deleteRowlbl.BackColor = System.Drawing.Color.Transparent;
             this.deleteRowlbl.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRowlbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.deleteRowlbl.Location = new System.Drawing.Point(731, 395);
+            this.deleteRowlbl.Location = new System.Drawing.Point(828, 382);
             this.deleteRowlbl.Name = "deleteRowlbl";
             this.deleteRowlbl.Size = new System.Drawing.Size(134, 24);
             this.deleteRowlbl.TabIndex = 145;
@@ -272,7 +272,7 @@
             this.checkoutlbl.BackColor = System.Drawing.Color.Transparent;
             this.checkoutlbl.Font = new System.Drawing.Font("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkoutlbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkoutlbl.Location = new System.Drawing.Point(662, 444);
+            this.checkoutlbl.Location = new System.Drawing.Point(759, 431);
             this.checkoutlbl.Name = "checkoutlbl";
             this.checkoutlbl.Size = new System.Drawing.Size(206, 24);
             this.checkoutlbl.TabIndex = 144;
@@ -284,7 +284,7 @@
             this.cartlbl.AutoSize = true;
             this.cartlbl.BackColor = System.Drawing.Color.Transparent;
             this.cartlbl.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cartlbl.Location = new System.Drawing.Point(320, 105);
+            this.cartlbl.Location = new System.Drawing.Point(417, 92);
             this.cartlbl.Name = "cartlbl";
             this.cartlbl.Size = new System.Drawing.Size(48, 24);
             this.cartlbl.TabIndex = 143;

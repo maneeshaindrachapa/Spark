@@ -79,6 +79,19 @@
             this.discountlLBL = new System.Windows.Forms.Label();
             this.discountChangedlbl = new System.Windows.Forms.Label();
             this.changeDiscountbtn = new System.Windows.Forms.Label();
+            this.quotationDG = new System.Windows.Forms.DataGridView();
+            this.acceptQuotation = new System.Windows.Forms.Label();
+            this.removequotationlbl = new System.Windows.Forms.Label();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.quotationDG)).BeginInit();
             this.SuspendLayout();
             // 
             // changePricelbl
@@ -656,12 +669,111 @@
             this.changeDiscountbtn.Visible = false;
             this.changeDiscountbtn.Click += new System.EventHandler(this.changeDiscountbtn_Click);
             // 
+            // quotationDG
+            // 
+            this.quotationDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.quotationDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.quotationDG.Location = new System.Drawing.Point(355, 299);
+            this.quotationDG.Name = "quotationDG";
+            this.quotationDG.RowTemplate.Height = 24;
+            this.quotationDG.Size = new System.Drawing.Size(630, 254);
+            this.quotationDG.TabIndex = 126;
+            // 
+            // acceptQuotation
+            // 
+            this.acceptQuotation.AutoSize = true;
+            this.acceptQuotation.BackColor = System.Drawing.Color.White;
+            this.acceptQuotation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.acceptQuotation.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptQuotation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.acceptQuotation.Location = new System.Drawing.Point(804, 557);
+            this.acceptQuotation.Margin = new System.Windows.Forms.Padding(0);
+            this.acceptQuotation.Name = "acceptQuotation";
+            this.acceptQuotation.Padding = new System.Windows.Forms.Padding(3);
+            this.acceptQuotation.Size = new System.Drawing.Size(179, 32);
+            this.acceptQuotation.TabIndex = 127;
+            this.acceptQuotation.Text = "Accept Quotation";
+            this.acceptQuotation.Click += new System.EventHandler(this.acceptQuotation_Click);
+            // 
+            // removequotationlbl
+            // 
+            this.removequotationlbl.AutoSize = true;
+            this.removequotationlbl.BackColor = System.Drawing.Color.White;
+            this.removequotationlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.removequotationlbl.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removequotationlbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.removequotationlbl.Location = new System.Drawing.Point(613, 557);
+            this.removequotationlbl.Margin = new System.Windows.Forms.Padding(0);
+            this.removequotationlbl.Name = "removequotationlbl";
+            this.removequotationlbl.Padding = new System.Windows.Forms.Padding(3);
+            this.removequotationlbl.Size = new System.Drawing.Size(191, 32);
+            this.removequotationlbl.TabIndex = 128;
+            this.removequotationlbl.Text = "Remove Quotation";
+            this.removequotationlbl.Click += new System.EventHandler(this.removequotationlbl_Click);
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "QID";
+            this.Column9.Name = "Column9";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Supplier ";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Brandname";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Model Name";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Part";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Quantity";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Price";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Paid Value";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Data";
+            this.Column8.Name = "Column8";
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.removequotationlbl);
+            this.Controls.Add(this.acceptQuotation);
+            this.Controls.Add(this.quotationDG);
             this.Controls.Add(this.discountChangedlbl);
             this.Controls.Add(this.changeDiscountbtn);
             this.Controls.Add(this.discountTB);
@@ -717,6 +829,7 @@
             this.Name = "admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "admin";
+            ((System.ComponentModel.ISupportInitialize)(this.quotationDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,5 +887,17 @@
         private System.Windows.Forms.Label discountlLBL;
         private System.Windows.Forms.Label discountChangedlbl;
         private System.Windows.Forms.Label changeDiscountbtn;
+        private System.Windows.Forms.DataGridView quotationDG;
+        private System.Windows.Forms.Label acceptQuotation;
+        private System.Windows.Forms.Label removequotationlbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

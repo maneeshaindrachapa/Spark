@@ -19,7 +19,7 @@ namespace Spark
             //load comboboxes with the part types and car models
             loadBrandnameCB();
             loadparttypeCB();
-
+            loadGrid();
             //load brandnames to add
             addloadBrandnameCB();
         }
@@ -382,6 +382,67 @@ namespace Spark
             catch (SqlException error)
             {
                 MessageBox.Show(error.ToString());
+            }
+        }
+
+        //load suppliers requests
+        public void loadGrid()
+        {
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            sqlConn.Open();
+
+            string query = "SELECT * from supplierDetails";
+            SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+            DataTable dtbl = new DataTable();
+
+            data.Fill(dtbl);
+            foreach (DataRow row in dtbl.Rows)
+            {
+                quotationDG.Rows.Add(row["id"],row["username"],row["brandname"], row["modelname"], row["partname"], row["quantity"], row["price"], row["paidValue"], row["Date"]);
+            }
+
+        }
+
+        // remove quotation
+        private void removequotationlbl_Click(object sender, EventArgs e)
+        {
+            
+           if (quotationDG.SelectedRows.Count > 0)
+           {
+                try
+                {
+                    SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                    sqlConn.Open();
+
+                    string query = "DELETE  from supplierDetails where id='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[0].Value.ToString() + "'";
+                    SqlCommand data = new SqlCommand(query, sqlConn);
+                    data.ExecuteNonQuery();
+                    quotationDG.Rows.RemoveAt(quotationDG.SelectedRows[0].Index);
+                }
+                catch (SqlException error)
+                {
+                    MessageBox.Show(error.ToString());
+                }
+                
+           }
+            
+        }
+
+        //accept quotation
+        private void acceptQuotation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                sqlConn.Open();
+
+                string query = "UPDATE supplierDetails set accept='1' where id='"+ quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[0].Value.ToString() + "'";
+                SqlCommand data = new SqlCommand(query, sqlConn);
+                data.ExecuteNonQuery();
+            }
+            catch(Exception error)
+            {
+                //MessageBox.Show(error.ToString());
             }
         }
     }
