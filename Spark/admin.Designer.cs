@@ -75,6 +75,10 @@
             this.modelchangebrandnamecmb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pricechangedNotification = new System.Windows.Forms.Label();
+            this.discountTB = new System.Windows.Forms.TextBox();
+            this.discountlLBL = new System.Windows.Forms.Label();
+            this.discountChangedlbl = new System.Windows.Forms.Label();
+            this.changeDiscountbtn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // changePricelbl
@@ -84,7 +88,7 @@
             this.changePricelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.changePricelbl.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePricelbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.changePricelbl.Location = new System.Drawing.Point(33, 556);
+            this.changePricelbl.Location = new System.Drawing.Point(9, 549);
             this.changePricelbl.Margin = new System.Windows.Forms.Padding(0);
             this.changePricelbl.Name = "changePricelbl";
             this.changePricelbl.Padding = new System.Windows.Forms.Padding(3);
@@ -99,7 +103,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(339, 83);
+            this.label2.Location = new System.Drawing.Point(340, 83);
             this.label2.MinimumSize = new System.Drawing.Size(4, 520);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(4, 520);
@@ -107,10 +111,10 @@
             // 
             // priceTB
             // 
-            this.priceTB.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.Location = new System.Drawing.Point(176, 455);
+            this.priceTB.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTB.Location = new System.Drawing.Point(158, 425);
             this.priceTB.Name = "priceTB";
-            this.priceTB.Size = new System.Drawing.Size(135, 31);
+            this.priceTB.Size = new System.Drawing.Size(157, 25);
             this.priceTB.TabIndex = 104;
             this.priceTB.Visible = false;
             // 
@@ -118,90 +122,90 @@
             // 
             this.stocktxt.AutoSize = true;
             this.stocktxt.BackColor = System.Drawing.Color.Transparent;
-            this.stocktxt.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stocktxt.Location = new System.Drawing.Point(177, 495);
+            this.stocktxt.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stocktxt.Location = new System.Drawing.Point(159, 465);
             this.stocktxt.Name = "stocktxt";
-            this.stocktxt.Size = new System.Drawing.Size(0, 24);
+            this.stocktxt.Size = new System.Drawing.Size(0, 18);
             this.stocktxt.TabIndex = 103;
             // 
             // searchResult5
             // 
             this.searchResult5.AutoSize = true;
             this.searchResult5.BackColor = System.Drawing.Color.Transparent;
-            this.searchResult5.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult5.Location = new System.Drawing.Point(37, 495);
+            this.searchResult5.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult5.Location = new System.Drawing.Point(19, 465);
             this.searchResult5.Name = "searchResult5";
-            this.searchResult5.Size = new System.Drawing.Size(0, 24);
+            this.searchResult5.Size = new System.Drawing.Size(0, 18);
             this.searchResult5.TabIndex = 102;
             // 
             // parttypetxt
             // 
             this.parttypetxt.AutoSize = true;
             this.parttypetxt.BackColor = System.Drawing.Color.Transparent;
-            this.parttypetxt.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parttypetxt.Location = new System.Drawing.Point(177, 429);
+            this.parttypetxt.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parttypetxt.Location = new System.Drawing.Point(159, 399);
             this.parttypetxt.Name = "parttypetxt";
-            this.parttypetxt.Size = new System.Drawing.Size(0, 24);
+            this.parttypetxt.Size = new System.Drawing.Size(0, 18);
             this.parttypetxt.TabIndex = 101;
             // 
             // modelnametxt
             // 
             this.modelnametxt.AutoSize = true;
             this.modelnametxt.BackColor = System.Drawing.Color.Transparent;
-            this.modelnametxt.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelnametxt.Location = new System.Drawing.Point(177, 396);
+            this.modelnametxt.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelnametxt.Location = new System.Drawing.Point(159, 366);
             this.modelnametxt.Name = "modelnametxt";
-            this.modelnametxt.Size = new System.Drawing.Size(0, 24);
+            this.modelnametxt.Size = new System.Drawing.Size(0, 18);
             this.modelnametxt.TabIndex = 100;
             // 
             // brandnametxt
             // 
             this.brandnametxt.AutoSize = true;
             this.brandnametxt.BackColor = System.Drawing.Color.Transparent;
-            this.brandnametxt.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brandnametxt.Location = new System.Drawing.Point(177, 364);
+            this.brandnametxt.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brandnametxt.Location = new System.Drawing.Point(159, 334);
             this.brandnametxt.Name = "brandnametxt";
-            this.brandnametxt.Size = new System.Drawing.Size(0, 24);
+            this.brandnametxt.Size = new System.Drawing.Size(0, 18);
             this.brandnametxt.TabIndex = 99;
             // 
             // searchResult4
             // 
             this.searchResult4.AutoSize = true;
             this.searchResult4.BackColor = System.Drawing.Color.Transparent;
-            this.searchResult4.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult4.Location = new System.Drawing.Point(37, 462);
+            this.searchResult4.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult4.Location = new System.Drawing.Point(19, 432);
             this.searchResult4.Name = "searchResult4";
-            this.searchResult4.Size = new System.Drawing.Size(0, 24);
+            this.searchResult4.Size = new System.Drawing.Size(0, 18);
             this.searchResult4.TabIndex = 98;
             // 
             // searchResult3
             // 
             this.searchResult3.AutoSize = true;
             this.searchResult3.BackColor = System.Drawing.Color.Transparent;
-            this.searchResult3.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult3.Location = new System.Drawing.Point(37, 429);
+            this.searchResult3.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult3.Location = new System.Drawing.Point(19, 399);
             this.searchResult3.Name = "searchResult3";
-            this.searchResult3.Size = new System.Drawing.Size(0, 24);
+            this.searchResult3.Size = new System.Drawing.Size(0, 18);
             this.searchResult3.TabIndex = 97;
             // 
             // searchResult2
             // 
             this.searchResult2.AutoSize = true;
             this.searchResult2.BackColor = System.Drawing.Color.Transparent;
-            this.searchResult2.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult2.Location = new System.Drawing.Point(37, 396);
+            this.searchResult2.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult2.Location = new System.Drawing.Point(19, 366);
             this.searchResult2.Name = "searchResult2";
-            this.searchResult2.Size = new System.Drawing.Size(0, 24);
+            this.searchResult2.Size = new System.Drawing.Size(0, 18);
             this.searchResult2.TabIndex = 96;
             // 
             // searchResult1
             // 
             this.searchResult1.AutoSize = true;
             this.searchResult1.BackColor = System.Drawing.Color.Transparent;
-            this.searchResult1.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResult1.Location = new System.Drawing.Point(37, 364);
+            this.searchResult1.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchResult1.Location = new System.Drawing.Point(19, 334);
             this.searchResult1.Name = "searchResult1";
-            this.searchResult1.Size = new System.Drawing.Size(0, 24);
+            this.searchResult1.Size = new System.Drawing.Size(0, 18);
             this.searchResult1.TabIndex = 95;
             // 
             // search
@@ -209,7 +213,7 @@
             this.search.AutoSize = true;
             this.search.BackColor = System.Drawing.Color.Transparent;
             this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
-            this.search.Location = new System.Drawing.Point(252, 291);
+            this.search.Location = new System.Drawing.Point(252, 278);
             this.search.MinimumSize = new System.Drawing.Size(30, 28);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(30, 28);
@@ -223,7 +227,7 @@
             this.parttypeCB.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.parttypeCB.FormattingEnabled = true;
             this.parttypeCB.IntegralHeight = false;
-            this.parttypeCB.Location = new System.Drawing.Point(35, 289);
+            this.parttypeCB.Location = new System.Drawing.Point(35, 273);
             this.parttypeCB.Name = "parttypeCB";
             this.parttypeCB.Size = new System.Drawing.Size(200, 32);
             this.parttypeCB.TabIndex = 93;
@@ -235,7 +239,7 @@
             this.modelnameCB.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modelnameCB.FormattingEnabled = true;
             this.modelnameCB.IntegralHeight = false;
-            this.modelnameCB.Location = new System.Drawing.Point(35, 216);
+            this.modelnameCB.Location = new System.Drawing.Point(35, 205);
             this.modelnameCB.Name = "modelnameCB";
             this.modelnameCB.Size = new System.Drawing.Size(200, 32);
             this.modelnameCB.TabIndex = 92;
@@ -247,7 +251,7 @@
             this.brandnameCB.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brandnameCB.FormattingEnabled = true;
             this.brandnameCB.IntegralHeight = false;
-            this.brandnameCB.Location = new System.Drawing.Point(35, 146);
+            this.brandnameCB.Location = new System.Drawing.Point(35, 140);
             this.brandnameCB.Name = "brandnameCB";
             this.brandnameCB.Size = new System.Drawing.Size(200, 32);
             this.brandnameCB.TabIndex = 91;
@@ -257,10 +261,10 @@
             // 
             this.partType.AutoSize = true;
             this.partType.BackColor = System.Drawing.Color.Transparent;
-            this.partType.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partType.Location = new System.Drawing.Point(20, 264);
+            this.partType.Font = new System.Drawing.Font("Raleway Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partType.Location = new System.Drawing.Point(20, 253);
             this.partType.Name = "partType";
-            this.partType.Size = new System.Drawing.Size(95, 24);
+            this.partType.Size = new System.Drawing.Size(73, 18);
             this.partType.TabIndex = 90;
             this.partType.Text = "Part Type";
             // 
@@ -268,10 +272,10 @@
             // 
             this.modelname.AutoSize = true;
             this.modelname.BackColor = System.Drawing.Color.Transparent;
-            this.modelname.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelname.Location = new System.Drawing.Point(20, 189);
+            this.modelname.Font = new System.Drawing.Font("Raleway Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelname.Location = new System.Drawing.Point(20, 186);
             this.modelname.Name = "modelname";
-            this.modelname.Size = new System.Drawing.Size(129, 24);
+            this.modelname.Size = new System.Drawing.Size(99, 18);
             this.modelname.TabIndex = 89;
             this.modelname.Text = "Model Name";
             // 
@@ -279,10 +283,10 @@
             // 
             this.brandname.AutoSize = true;
             this.brandname.BackColor = System.Drawing.Color.Transparent;
-            this.brandname.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brandname.Font = new System.Drawing.Font("Raleway Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brandname.Location = new System.Drawing.Point(20, 121);
             this.brandname.Name = "brandname";
-            this.brandname.Size = new System.Drawing.Size(126, 24);
+            this.brandname.Size = new System.Drawing.Size(96, 18);
             this.brandname.TabIndex = 88;
             this.brandname.Text = "Brand Name";
             // 
@@ -596,12 +600,61 @@
             this.pricechangedNotification.BackColor = System.Drawing.Color.Transparent;
             this.pricechangedNotification.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pricechangedNotification.ForeColor = System.Drawing.Color.Black;
-            this.pricechangedNotification.Location = new System.Drawing.Point(185, 562);
+            this.pricechangedNotification.Location = new System.Drawing.Point(23, 585);
             this.pricechangedNotification.Name = "pricechangedNotification";
             this.pricechangedNotification.Size = new System.Drawing.Size(109, 18);
             this.pricechangedNotification.TabIndex = 121;
             this.pricechangedNotification.Text = "Price Changed";
             this.pricechangedNotification.Visible = false;
+            // 
+            // discountTB
+            // 
+            this.discountTB.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountTB.Location = new System.Drawing.Point(158, 496);
+            this.discountTB.Name = "discountTB";
+            this.discountTB.Size = new System.Drawing.Size(157, 25);
+            this.discountTB.TabIndex = 123;
+            this.discountTB.Visible = false;
+            // 
+            // discountlLBL
+            // 
+            this.discountlLBL.AutoSize = true;
+            this.discountlLBL.BackColor = System.Drawing.Color.Transparent;
+            this.discountlLBL.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountlLBL.Location = new System.Drawing.Point(19, 503);
+            this.discountlLBL.Name = "discountlLBL";
+            this.discountlLBL.Size = new System.Drawing.Size(0, 18);
+            this.discountlLBL.TabIndex = 122;
+            // 
+            // discountChangedlbl
+            // 
+            this.discountChangedlbl.AutoSize = true;
+            this.discountChangedlbl.BackColor = System.Drawing.Color.Transparent;
+            this.discountChangedlbl.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountChangedlbl.ForeColor = System.Drawing.Color.Black;
+            this.discountChangedlbl.Location = new System.Drawing.Point(155, 585);
+            this.discountChangedlbl.Name = "discountChangedlbl";
+            this.discountChangedlbl.Size = new System.Drawing.Size(172, 18);
+            this.discountChangedlbl.TabIndex = 125;
+            this.discountChangedlbl.Text = "Discount Rate Changed";
+            this.discountChangedlbl.Visible = false;
+            // 
+            // changeDiscountbtn
+            // 
+            this.changeDiscountbtn.AutoSize = true;
+            this.changeDiscountbtn.BackColor = System.Drawing.Color.Transparent;
+            this.changeDiscountbtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.changeDiscountbtn.Font = new System.Drawing.Font("Raleway Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeDiscountbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.changeDiscountbtn.Location = new System.Drawing.Point(152, 549);
+            this.changeDiscountbtn.Margin = new System.Windows.Forms.Padding(0);
+            this.changeDiscountbtn.Name = "changeDiscountbtn";
+            this.changeDiscountbtn.Padding = new System.Windows.Forms.Padding(3);
+            this.changeDiscountbtn.Size = new System.Drawing.Size(182, 32);
+            this.changeDiscountbtn.TabIndex = 124;
+            this.changeDiscountbtn.Text = "Change Discount ";
+            this.changeDiscountbtn.Visible = false;
+            this.changeDiscountbtn.Click += new System.EventHandler(this.changeDiscountbtn_Click);
             // 
             // admin
             // 
@@ -609,6 +662,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.discountChangedlbl);
+            this.Controls.Add(this.changeDiscountbtn);
+            this.Controls.Add(this.discountTB);
+            this.Controls.Add(this.discountlLBL);
             this.Controls.Add(this.pricechangedNotification);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.modelchangebrandnamecmb);
@@ -713,5 +770,9 @@
         private System.Windows.Forms.ComboBox modelchangebrandnamecmb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label pricechangedNotification;
+        private System.Windows.Forms.TextBox discountTB;
+        private System.Windows.Forms.Label discountlLBL;
+        private System.Windows.Forms.Label discountChangedlbl;
+        private System.Windows.Forms.Label changeDiscountbtn;
     }
 }
