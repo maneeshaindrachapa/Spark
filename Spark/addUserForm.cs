@@ -137,9 +137,13 @@ namespace Spark
                     {
                         typeUser = "2";
                     }
-                    else
+                    else if(typeCMB.SelectedIndex==1)
                     {
                         typeUser = "1";
+                    }
+                    else
+                    {
+                        typeUser = "4";
                     }
 
                                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");

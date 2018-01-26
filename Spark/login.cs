@@ -73,6 +73,15 @@ namespace Spark
                     admin.ShowDialog();
                     this.Close();
                 }
+                else if (type == 4)
+                {
+                    //go to customer
+                    this.Hide();
+                    specialCustomer specialcustomer = new specialCustomer();
+                    specialcustomer.setUsername(username);
+                    specialcustomer.ShowDialog();
+                    this.Close();
+                }
             }
             else
             {

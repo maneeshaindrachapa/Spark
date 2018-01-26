@@ -36,12 +36,41 @@ namespace Spark
 
         private void goBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            user userform = new user();
-            userform.setUsername(username);
-            userform.setDataGrid(this.checkoutDataGrid);
-            userform.ShowDialog();
-            this.Close();
+            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+            string query = "SELECT * FROM tbluser where username='" + username +"'";
+            SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+            DataTable dtbl = new DataTable();
+            data.Fill(dtbl);
+            if (dtbl.Rows.Count != 0)
+            {
+                int type = 0;
+                foreach (DataRow row in dtbl.Rows)
+                {
+                    type = Convert.ToInt16(row["type"].ToString());
+
+                }
+                if (type == 1 | type==2)
+                {
+                    //if it is cashier
+                    this.Hide();
+                    user userform = new user();
+                    userform.setUsername(username);
+                    userform.setDataGrid(this.checkoutDataGrid);
+                    userform.ShowDialog();
+                    this.Close();
+                }
+                else if (type == 4)
+                {
+                    //if it is special customer
+                    this.Hide();
+                    specialCustomer specialcustomer = new specialCustomer();
+                    specialcustomer.setUsername(username);
+                    specialcustomer.setDataGrid(this.checkoutDataGrid);
+                    specialcustomer.ShowDialog();
+                    this.Close();
+                }
+               
+            }
         }
 
         private void calPrice_Click(object sender, EventArgs e)
@@ -72,7 +101,7 @@ namespace Spark
         {
             try
             {
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
 
 

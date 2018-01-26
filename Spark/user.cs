@@ -213,9 +213,10 @@ namespace Spark
 
         private void logoutlbl1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             login login = new login();
             login.ShowDialog();
-            this.Dispose();
+            this.Close();
         }
 
         private void checkoutlbl_Click(object sender, EventArgs e)

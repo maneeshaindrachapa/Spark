@@ -69,7 +69,8 @@
             this.typeCMB.FormattingEnabled = true;
             this.typeCMB.Items.AddRange(new object[] {
             "Supplier",
-            "Cashier"});
+            "Cashier",
+            "Special Customer"});
             this.typeCMB.Location = new System.Drawing.Point(12, 476);
             this.typeCMB.Name = "typeCMB";
             this.typeCMB.Size = new System.Drawing.Size(305, 32);
