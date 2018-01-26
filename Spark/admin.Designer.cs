@@ -64,14 +64,16 @@
             this.brandnameaddTB = new System.Windows.Forms.TextBox();
             this.submitBrandname = new System.Windows.Forms.Label();
             this.validBrandname = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addmodelValid = new System.Windows.Forms.Label();
+            this.modelSubmit = new System.Windows.Forms.Label();
+            this.addmodelTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.addpartValid = new System.Windows.Forms.Label();
             this.addpartSubmit = new System.Windows.Forms.Label();
             this.addpartTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.modelchangebrandnamecmb = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // changePricelbl
@@ -473,36 +475,38 @@
             this.validBrandname.Size = new System.Drawing.Size(0, 18);
             this.validBrandname.TabIndex = 110;
             // 
-            // label3
+            // addmodelValid
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(520, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 18);
-            this.label3.TabIndex = 114;
+            this.addmodelValid.AutoSize = true;
+            this.addmodelValid.BackColor = System.Drawing.Color.Transparent;
+            this.addmodelValid.Font = new System.Drawing.Font("Raleway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addmodelValid.ForeColor = System.Drawing.Color.Transparent;
+            this.addmodelValid.Location = new System.Drawing.Point(527, 195);
+            this.addmodelValid.Name = "addmodelValid";
+            this.addmodelValid.Size = new System.Drawing.Size(0, 18);
+            this.addmodelValid.TabIndex = 114;
             // 
-            // label4
+            // modelSubmit
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(520, 216);
-            this.label4.MinimumSize = new System.Drawing.Size(135, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 38);
-            this.label4.TabIndex = 113;
+            this.modelSubmit.AutoSize = true;
+            this.modelSubmit.BackColor = System.Drawing.Color.Transparent;
+            this.modelSubmit.Image = ((System.Drawing.Image)(resources.GetObject("modelSubmit.Image")));
+            this.modelSubmit.Location = new System.Drawing.Point(843, 216);
+            this.modelSubmit.MinimumSize = new System.Drawing.Size(135, 38);
+            this.modelSubmit.Name = "modelSubmit";
+            this.modelSubmit.Size = new System.Drawing.Size(135, 38);
+            this.modelSubmit.TabIndex = 113;
+            this.modelSubmit.Click += new System.EventHandler(this.modelSubmit_Click);
             // 
-            // textBox1
+            // addmodelTB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Raleway", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(352, 216);
-            this.textBox1.MinimumSize = new System.Drawing.Size(172, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 38);
-            this.textBox1.TabIndex = 112;
+            this.addmodelTB.Font = new System.Drawing.Font("Raleway", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addmodelTB.Location = new System.Drawing.Point(675, 216);
+            this.addmodelTB.MinimumSize = new System.Drawing.Size(172, 38);
+            this.addmodelTB.Name = "addmodelTB";
+            this.addmodelTB.Size = new System.Drawing.Size(172, 38);
+            this.addmodelTB.TabIndex = 112;
+            this.addmodelTB.TextChanged += new System.EventHandler(this.addmodelTB_TextChanged);
             // 
             // label5
             // 
@@ -512,9 +516,9 @@
             this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(349, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 18);
+            this.label5.Size = new System.Drawing.Size(115, 18);
             this.label5.TabIndex = 111;
-            this.label5.Text = "Add  Name";
+            this.label5.Text = "Add  Car Model";
             // 
             // addpartValid
             // 
@@ -537,6 +541,7 @@
             this.addpartSubmit.Name = "addpartSubmit";
             this.addpartSubmit.Size = new System.Drawing.Size(135, 38);
             this.addpartSubmit.TabIndex = 117;
+            this.addpartSubmit.Click += new System.EventHandler(this.addpartSubmit_Click);
             // 
             // addpartTB
             // 
@@ -560,19 +565,44 @@
             this.label8.TabIndex = 115;
             this.label8.Text = "Add Part ";
             // 
+            // modelchangebrandnamecmb
+            // 
+            this.modelchangebrandnamecmb.DropDownHeight = 120;
+            this.modelchangebrandnamecmb.DropDownWidth = 200;
+            this.modelchangebrandnamecmb.Font = new System.Drawing.Font("Raleway", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelchangebrandnamecmb.FormattingEnabled = true;
+            this.modelchangebrandnamecmb.IntegralHeight = false;
+            this.modelchangebrandnamecmb.Location = new System.Drawing.Point(352, 218);
+            this.modelchangebrandnamecmb.Name = "modelchangebrandnamecmb";
+            this.modelchangebrandnamecmb.Size = new System.Drawing.Size(317, 35);
+            this.modelchangebrandnamecmb.TabIndex = 119;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(339, 281);
+            this.label6.MinimumSize = new System.Drawing.Size(655, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(655, 4);
+            this.label6.TabIndex = 120;
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.modelchangebrandnamecmb);
             this.Controls.Add(this.addpartValid);
             this.Controls.Add(this.addpartSubmit);
             this.Controls.Add(this.addpartTB);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addmodelValid);
+            this.Controls.Add(this.modelSubmit);
+            this.Controls.Add(this.addmodelTB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.validBrandname);
             this.Controls.Add(this.submitBrandname);
@@ -656,13 +686,15 @@
         private System.Windows.Forms.TextBox brandnameaddTB;
         private System.Windows.Forms.Label submitBrandname;
         private System.Windows.Forms.Label validBrandname;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label addmodelValid;
+        private System.Windows.Forms.Label modelSubmit;
+        private System.Windows.Forms.TextBox addmodelTB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label addpartValid;
         private System.Windows.Forms.Label addpartSubmit;
         private System.Windows.Forms.TextBox addpartTB;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox modelchangebrandnamecmb;
+        private System.Windows.Forms.Label label6;
     }
 }

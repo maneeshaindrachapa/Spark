@@ -81,8 +81,7 @@ namespace Spark
                 //reading data from server and add them to combobox modelname
                            SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
-                string query = "SELECT carModel FROM carBrands left join carParts on carBrands.carBrand=carParts.carBrand where carParts.carBrand='" + brandnameCB.GetItemText(brandnameCB.SelectedItem) + "'group by carModel";
-                SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
+                string query = "SELECT * from Modelname where carBrand='" + brandnameCB.GetItemText(brandnameCB.SelectedItem) + "'"; SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
                 DataTable dtbl = new DataTable();
                 data.Fill(dtbl);
                 foreach (DataRow row in dtbl.Rows)
