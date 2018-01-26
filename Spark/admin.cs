@@ -398,7 +398,7 @@ namespace Spark
             data.Fill(dtbl);
             foreach (DataRow row in dtbl.Rows)
             {
-                quotationDG.Rows.Add(row["id"],row["username"],row["brandname"], row["modelname"], row["partname"], row["quantity"], row["price"], row["paidValue"], row["Date"]);
+                quotationDG.Rows.Add(row["id"],row["username"],row["brandname"], row["modelname"], row["partname"], row["quantity"], row["price"], row["paidValue"],row["Balance"], row["Date"]);
             }
 
         }
@@ -443,6 +443,30 @@ namespace Spark
             catch(Exception error)
             {
                 //MessageBox.Show(error.ToString());
+            }
+        }
+
+        //pay quotation
+        private void payementBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                sqlConn.Open();
+
+                int value = Convert.ToInt32(quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[6].Value);
+                int paidValue = Convert.ToInt32(quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[7].Value) + Convert.ToInt32(paymentTB.Text);
+                int balance = value - paidValue;
+                string query = "UPDATE supplierDetails set paidValue='"+paidValue+"',Balance='"+balance+"' where id='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[0].Value.ToString() + "'";
+                SqlCommand data = new SqlCommand(query, sqlConn);
+                data.ExecuteNonQuery();
+
+                this.quotationDG.Rows.Clear();
+                loadGrid();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
             }
         }
     }

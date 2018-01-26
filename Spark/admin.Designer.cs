@@ -82,6 +82,8 @@
             this.quotationDG = new System.Windows.Forms.DataGridView();
             this.acceptQuotation = new System.Windows.Forms.Label();
             this.removequotationlbl = new System.Windows.Forms.Label();
+            this.paymentTB = new System.Windows.Forms.TextBox();
+            this.payementBTN = new System.Windows.Forms.Label();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +92,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.quotationDG)).BeginInit();
             this.SuspendLayout();
@@ -467,7 +470,7 @@
             this.brandnameaddTB.Location = new System.Drawing.Point(352, 142);
             this.brandnameaddTB.MinimumSize = new System.Drawing.Size(172, 38);
             this.brandnameaddTB.Name = "brandnameaddTB";
-            this.brandnameaddTB.Size = new System.Drawing.Size(172, 38);
+            this.brandnameaddTB.Size = new System.Drawing.Size(172, 35);
             this.brandnameaddTB.TabIndex = 108;
             this.brandnameaddTB.TextChanged += new System.EventHandler(this.brandnameaddTB_TextChanged);
             // 
@@ -523,7 +526,7 @@
             this.addmodelTB.Location = new System.Drawing.Point(675, 216);
             this.addmodelTB.MinimumSize = new System.Drawing.Size(172, 38);
             this.addmodelTB.Name = "addmodelTB";
-            this.addmodelTB.Size = new System.Drawing.Size(172, 38);
+            this.addmodelTB.Size = new System.Drawing.Size(172, 35);
             this.addmodelTB.TabIndex = 112;
             this.addmodelTB.TextChanged += new System.EventHandler(this.addmodelTB_TextChanged);
             // 
@@ -568,7 +571,7 @@
             this.addpartTB.Location = new System.Drawing.Point(675, 140);
             this.addpartTB.MinimumSize = new System.Drawing.Size(172, 38);
             this.addpartTB.Name = "addpartTB";
-            this.addpartTB.Size = new System.Drawing.Size(172, 38);
+            this.addpartTB.Size = new System.Drawing.Size(172, 35);
             this.addpartTB.TabIndex = 116;
             this.addpartTB.TextChanged += new System.EventHandler(this.addpartTB_TextChanged);
             // 
@@ -671,6 +674,8 @@
             // 
             // quotationDG
             // 
+            this.quotationDG.AllowUserToAddRows = false;
+            this.quotationDG.AllowUserToDeleteRows = false;
             this.quotationDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.quotationDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column9,
@@ -681,6 +686,7 @@
             this.Column5,
             this.Column6,
             this.Column7,
+            this.Column10,
             this.Column8});
             this.quotationDG.Location = new System.Drawing.Point(355, 299);
             this.quotationDG.Name = "quotationDG";
@@ -719,6 +725,27 @@
             this.removequotationlbl.TabIndex = 128;
             this.removequotationlbl.Text = "Remove Quotation";
             this.removequotationlbl.Click += new System.EventHandler(this.removequotationlbl_Click);
+            // 
+            // paymentTB
+            // 
+            this.paymentTB.Font = new System.Drawing.Font("Raleway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentTB.Location = new System.Drawing.Point(355, 559);
+            this.paymentTB.Name = "paymentTB";
+            this.paymentTB.Size = new System.Drawing.Size(157, 31);
+            this.paymentTB.TabIndex = 129;
+            // 
+            // payementBTN
+            // 
+            this.payementBTN.AutoSize = true;
+            this.payementBTN.BackColor = System.Drawing.Color.Transparent;
+            this.payementBTN.Image = ((System.Drawing.Image)(resources.GetObject("payementBTN.Image")));
+            this.payementBTN.Location = new System.Drawing.Point(517, 559);
+            this.payementBTN.MaximumSize = new System.Drawing.Size(68, 68);
+            this.payementBTN.MinimumSize = new System.Drawing.Size(32, 32);
+            this.payementBTN.Name = "payementBTN";
+            this.payementBTN.Size = new System.Drawing.Size(32, 32);
+            this.payementBTN.TabIndex = 130;
+            this.payementBTN.Click += new System.EventHandler(this.payementBTN_Click);
             // 
             // Column9
             // 
@@ -760,6 +787,11 @@
             this.Column7.HeaderText = "Paid Value";
             this.Column7.Name = "Column7";
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Balance";
+            this.Column10.Name = "Column10";
+            // 
             // Column8
             // 
             this.Column8.HeaderText = "Data";
@@ -771,6 +803,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 613);
+            this.Controls.Add(this.payementBTN);
+            this.Controls.Add(this.paymentTB);
             this.Controls.Add(this.removequotationlbl);
             this.Controls.Add(this.acceptQuotation);
             this.Controls.Add(this.quotationDG);
@@ -890,6 +924,8 @@
         private System.Windows.Forms.DataGridView quotationDG;
         private System.Windows.Forms.Label acceptQuotation;
         private System.Windows.Forms.Label removequotationlbl;
+        private System.Windows.Forms.TextBox paymentTB;
+        private System.Windows.Forms.Label payementBTN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -898,6 +934,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
