@@ -436,9 +436,44 @@ namespace Spark
                 SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
 
+                //starting transaction
+                string q = "BEGIN TRANSACTION";
+                SqlCommand cmd1 = new SqlCommand(q, sqlConn);
+                cmd1.ExecuteNonQuery();
+
                 string query = "UPDATE supplierDetails set accept='1' where id='"+ quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[0].Value.ToString() + "'";
                 SqlCommand data = new SqlCommand(query, sqlConn);
                 data.ExecuteNonQuery();
+
+                int stock = 0;
+                string query5 = "SELECT * from carParts where carBrand='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[2].Value.ToString() + "' and carModel='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[3].Value.ToString() + "' and carPartName='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[4].Value.ToString() + "'";
+                SqlDataAdapter data5 = new SqlDataAdapter(query, sqlConn);
+                DataTable dtbl = new DataTable();
+
+                data5.Fill(dtbl);
+                MessageBox.Show(dtbl.Rows.Count.ToString());
+                MessageBox.Show(query5);
+
+                if (dtbl.Rows.Count == 1)
+                {
+                    foreach (DataRow row in dtbl.Rows)
+                    {
+                        stock += Convert.ToInt16(row["stock"].ToString());
+                        MessageBox.Show(row["stock"].ToString());
+                    }
+                }
+
+                stock+= Convert.ToInt16(quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[5].Value.ToString());
+                string query2 = "UPDATE carParts set stock=" + stock + "where carBrand='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[2].Value.ToString() + "' and carModel='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[3].Value.ToString() + "' and carPartName='" + quotationDG.Rows[quotationDG.SelectedRows[0].Index].Cells[4].Value.ToString() + "'";
+                SqlCommand data2 = new SqlCommand(query2, sqlConn);
+                data2.ExecuteNonQuery();
+
+                //end transation
+                string q1 = "COMMIT";
+                SqlCommand cmd2 = new SqlCommand(q1, sqlConn);
+                cmd2.ExecuteNonQuery();
+                
+
             }
             catch(Exception error)
             {

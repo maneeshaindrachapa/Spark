@@ -177,6 +177,7 @@ namespace Spark
             }
             else
             {
+                Boolean temperory = true;
                 for (int i = 0; i < dataGrid.Rows.Count - 1; i++)
                 {
                     if (dataGrid.Rows[i].Cells[0].Value.ToString() == brandnametxt.Text && dataGrid.Rows[i].Cells[1].Value.ToString() == modelnametxt.Text && dataGrid.Rows[i].Cells[2].Value.ToString() == parttypetxt.Text)
@@ -184,16 +185,18 @@ namespace Spark
                         dataGrid.Rows[i].Cells[4].Value = Convert.ToInt16(dataGrid.Rows[i].Cells[4].Value) + temp;
                         partNumBx.Maximum = Convert.ToInt16(stocktxt.Text) - temp;
                         partNumBx.Value = 0;
+                        temperory = false;
                         break;
                     }
-                    if (dataGrid.Rows.Count - 1 == i)
-                    {
-                        MessageBox.Show("ll");
-                        dataGrid.Rows.Add(brandnametxt.Text, modelnametxt.Text, parttypetxt.Text, pricetxt.Text, temp);
-                        partNumBx.Maximum = Convert.ToInt16(stocktxt.Text) - temp;
-                        partNumBx.Value = 0;
-                        break;
-                    }
+                    
+                }
+                if (temperory)
+                {
+                    MessageBox.Show("ll");
+                    dataGrid.Rows.Add(brandnametxt.Text, modelnametxt.Text, parttypetxt.Text, pricetxt.Text, temp);
+                    partNumBx.Maximum = Convert.ToInt16(stocktxt.Text) - temp;
+                    partNumBx.Value = 0;
+               
                 }
             }
         }

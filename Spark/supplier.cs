@@ -45,7 +45,7 @@ namespace Spark
             try
             {
                 //reading data from server and add them to combobox brandname
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
                 string query = "SELECT partName FROM parts";
                 SqlDataAdapter data = new SqlDataAdapter(query, sqlConn);
@@ -67,7 +67,7 @@ namespace Spark
             try
             {
                 //reading data from server and add them to combobox brandname
-                           SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Maneesha\Desktop\Spark\Spark\spark_database.mdf;Integrated Security=True");
                 sqlConn.Open();
 
 
@@ -200,7 +200,7 @@ namespace Spark
             data.Fill(dtbl);
             foreach (DataRow row in dtbl.Rows)
             {
-                transactionDG.Rows.Add(row["brandname"], row["modelname"], row["partname"], row["quantity"], row["Date"], row["price"], row["paidValue"]);
+                transactionDG.Rows.Add(row["brandname"], row["modelname"], row["partname"], row["quantity"], row["Date"], row["price"], row["paidValue"],row["Balance"]);
             }
 
         }

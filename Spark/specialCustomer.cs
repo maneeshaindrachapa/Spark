@@ -261,7 +261,7 @@ namespace Spark
                         partNumBx.Value = 0;
                         break;
                     }
-                    if (dataGrid.Rows.Count - 1 == i)/////
+                    if (dataGrid.Rows.Count - 1 == i)
                     {
                         MessageBox.Show("ll");
                         dataGrid.Rows.Add(brandnametxt.Text, modelnametxt.Text, parttypetxt.Text, pricetxt.Text, temp);

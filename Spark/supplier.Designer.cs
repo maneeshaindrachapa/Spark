@@ -37,13 +37,6 @@
             this.buyPartslbl = new System.Windows.Forms.Label();
             this.addIteNE = new System.Windows.Forms.Label();
             this.priceNUD = new System.Windows.Forms.NumericUpDown();
-            this.col7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edituserlbl = new System.Windows.Forms.Label();
             this.transactionDG = new System.Windows.Forms.DataGridView();
             this.modelnameCB = new System.Windows.Forms.ComboBox();
@@ -67,6 +60,14 @@
             this.homeLogo = new System.Windows.Forms.Label();
             this.secondTitle = new System.Windows.Forms.Label();
             this.mainLogo = new System.Windows.Forms.Label();
+            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.priceNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityNUD)).BeginInit();
@@ -179,58 +180,6 @@
             this.priceNUD.Size = new System.Drawing.Size(160, 31);
             this.priceNUD.TabIndex = 98;
             // 
-            // col7
-            // 
-            this.col7.HeaderText = "Paid Value";
-            this.col7.Name = "col7";
-            this.col7.ReadOnly = true;
-            this.col7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // col6
-            // 
-            this.col6.HeaderText = "Price For Part";
-            this.col6.Name = "col6";
-            this.col6.ReadOnly = true;
-            this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // col5
-            // 
-            this.col5.HeaderText = "Date Added";
-            this.col5.Name = "col5";
-            this.col5.ReadOnly = true;
-            this.col5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // col4
-            // 
-            this.col4.HeaderText = "Quantity";
-            this.col4.Name = "col4";
-            this.col4.ReadOnly = true;
-            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col4.Width = 80;
-            // 
-            // col3
-            // 
-            this.col3.HeaderText = "Part Name";
-            this.col3.Name = "col3";
-            this.col3.ReadOnly = true;
-            this.col3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // col2
-            // 
-            this.col2.HeaderText = "Model Name";
-            this.col2.Name = "col2";
-            this.col2.ReadOnly = true;
-            this.col2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col2.Width = 120;
-            // 
-            // col1
-            // 
-            this.col1.HeaderText = "Brandname";
-            this.col1.Name = "col1";
-            this.col1.ReadOnly = true;
-            this.col1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.col1.Width = 90;
-            // 
             // edituserlbl
             // 
             this.edituserlbl.AutoSize = true;
@@ -260,7 +209,8 @@
             this.col4,
             this.col5,
             this.col6,
-            this.col7});
+            this.col7,
+            this.balance});
             this.transactionDG.Location = new System.Drawing.Point(243, 122);
             this.transactionDG.MultiSelect = false;
             this.transactionDG.Name = "transactionDG";
@@ -516,6 +466,64 @@
             this.mainLogo.Size = new System.Drawing.Size(240, 103);
             this.mainLogo.TabIndex = 76;
             // 
+            // col1
+            // 
+            this.col1.HeaderText = "Brandname";
+            this.col1.Name = "col1";
+            this.col1.ReadOnly = true;
+            this.col1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col1.Width = 90;
+            // 
+            // col2
+            // 
+            this.col2.HeaderText = "Model Name";
+            this.col2.Name = "col2";
+            this.col2.ReadOnly = true;
+            this.col2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // col3
+            // 
+            this.col3.HeaderText = "Part Name";
+            this.col3.Name = "col3";
+            this.col3.ReadOnly = true;
+            this.col3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col3.Width = 80;
+            // 
+            // col4
+            // 
+            this.col4.HeaderText = "Quantity";
+            this.col4.Name = "col4";
+            this.col4.ReadOnly = true;
+            this.col4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.col4.Width = 50;
+            // 
+            // col5
+            // 
+            this.col5.HeaderText = "Date Added";
+            this.col5.Name = "col5";
+            this.col5.ReadOnly = true;
+            this.col5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // col6
+            // 
+            this.col6.HeaderText = "Price For Part";
+            this.col6.Name = "col6";
+            this.col6.ReadOnly = true;
+            this.col6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // col7
+            // 
+            this.col7.HeaderText = "Paid Value";
+            this.col7.Name = "col7";
+            this.col7.ReadOnly = true;
+            this.col7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // balance
+            // 
+            this.balance.HeaderText = "Balance";
+            this.balance.Name = "balance";
+            this.balance.ReadOnly = true;
+            // 
             // supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -574,13 +582,6 @@
         private System.Windows.Forms.Label buyPartslbl;
         private System.Windows.Forms.Label addIteNE;
         private System.Windows.Forms.NumericUpDown priceNUD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col1;
         private System.Windows.Forms.Label edituserlbl;
         private System.Windows.Forms.DataGridView transactionDG;
         private System.Windows.Forms.ComboBox modelnameCB;
@@ -604,5 +605,13 @@
         private System.Windows.Forms.Label homeLogo;
         private System.Windows.Forms.Label secondTitle;
         private System.Windows.Forms.Label mainLogo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balance;
     }
 }
